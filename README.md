@@ -10,4 +10,4 @@ This repository is a collection of different solutions to coding challenges and 
 [Yasin Kinyua Murithi](https://github.com/yaska1706/) 
 
 ## LICENSE
-&copy; MIT LICENSE 
+&copy;2022 MIT LICENSE 

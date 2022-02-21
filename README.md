@@ -4,7 +4,7 @@ This repository is a collection of different solutions to coding challenges and 
 ## List of Challenges
 - [Josephus Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/JosephusProblem)
 - [FizzBuzz Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/FizzBuzz)
-
+- [FizzBuzzPlus Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/FizzBuzzPlus)
 <br>
 
 ## AUTHORS

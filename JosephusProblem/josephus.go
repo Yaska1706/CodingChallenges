@@ -1,4 +1,4 @@
-package main
+package JosephusProblem
 
 func Josephus(number, start int) int {
 	if number == 1 {

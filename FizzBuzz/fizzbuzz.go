@@ -1,4 +1,4 @@
-package main
+package FizzBuzz
 
 import "fmt"
 
@@ -19,10 +19,4 @@ func fizzBuzz(number int) []string {
 		}
 	}
 	return results
-}
-
-func main() {
-	number := 15
-	result := fizzBuzz(number)
-	fmt.Println(result)
 }

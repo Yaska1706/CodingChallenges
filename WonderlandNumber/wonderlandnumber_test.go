@@ -1,0 +1,117 @@
+package WonderlandNumber
+
+import (
+	"reflect"
+	"testing"
+)
+
+func Test_countDigits(t *testing.T) {
+	type args struct {
+		number int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+		{
+			name: "When number is less than 10",
+			args: args{
+				number: 9,
+			},
+			want: 1,
+		},
+		{
+			name: "when number is 10 or more",
+			args: args{
+				number: 567,
+			},
+			want: 3,
+		},
+		{
+			name: "when number is large",
+			args: args{
+				number: 567867,
+			},
+			want: 6,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := countDigits(tt.args.number); got != tt.want {
+				t.Errorf("countDigits() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_storepresentDigits(t *testing.T) {
+	type args struct {
+		number int
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		// TODO: Add test cases.
+		{
+			name: "When digit count is less than 6",
+			args: args{
+				number: 4885,
+			},
+			want: []int{},
+		},
+		{
+			name: "When digit count is greater than 6",
+			args: args{
+				number: 4885487,
+			},
+			want: []int{},
+		},
+		{
+			name: "When digit count is 6",
+			args: args{
+				number: 488579,
+			},
+			want: []int{9, 7, 5, 8, 8, 4},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := storepresentDigits(tt.args.number); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("storepresentDigits() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_checkNumbersExist(t *testing.T) {
+	type args struct {
+		number int
+		store  []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "Numbers all exist",
+			args: args{
+				number: 346759,
+				store:  []int{6, 7, 9, 5, 3, 4},
+			},
+			want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := checkNumbersExist(tt.args.number, tt.args.store); got != tt.want {
+				t.Errorf("checkNumbersExist() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

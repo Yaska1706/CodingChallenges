@@ -23,5 +23,4 @@ jobs:
       run: |
         go mod tidy -v
         go test -v ./...
-        go test -race -coverprofile=coverage.out -covermode=atomic
 

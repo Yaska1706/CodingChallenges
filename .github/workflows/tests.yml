@@ -1,4 +1,4 @@
-name: Go
+name: Run Tests and Coverage
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - with:
+        fetch-depth: 2
 
     - name: Set up Go
       uses: actions/setup-go@v2
@@ -23,3 +25,9 @@ jobs:
       run: |
         go mod tidy -v
         go test -v ./...
+        
+    - name: Run coverage
+      run: go test -race -coverprofile=coverage.out -covermode=atomic
+      
+    - name: Upload coverage to Codecov
+      run: bash <(curl -s https://codecov.io/bash)

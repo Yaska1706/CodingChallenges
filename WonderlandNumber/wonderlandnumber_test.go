@@ -165,3 +165,37 @@ func Test_wonderlandnumber(t *testing.T) {
 		})
 	}
 }
+
+func Test_generatewonderlandnumber(t *testing.T) {
+	type args struct {
+		size int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+		{
+			name: "cyclic number",
+			args: args{
+				size: 999999,
+			},
+			want: 142857,
+		},
+		{
+			name: "out of range number",
+			args: args{
+				size: 1000,
+			},
+			want: 0,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := generatewonderlandnumber(tt.args.size); got != tt.want {
+				t.Errorf("generatewonderlandnumber() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

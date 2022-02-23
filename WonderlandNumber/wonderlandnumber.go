@@ -1,5 +1,19 @@
 package WonderlandNumber
 
+func generatewonderlandnumber(size int) int {
+	var result int
+	if size < 100000 && size >= 1000000 {
+		return 0
+	}
+	for i := 100000; i <= size; i++ {
+		check := wonderlandnumber(i)
+		if check {
+			result = i
+		}
+	}
+	return result
+}
+
 func wonderlandnumber(number int) bool {
 	var b bool
 	var results int

@@ -23,7 +23,4 @@ jobs:
       run: |
         go mod tidy -v
         go test -v ./...
-      
-    - name: Coverage
-    - run: |
-        go test -race -coverprofile=coverage.out -covermode=atomic
+

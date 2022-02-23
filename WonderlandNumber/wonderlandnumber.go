@@ -1,5 +1,27 @@
 package WonderlandNumber
 
+func wonderlandnumber(number int) bool {
+	var b bool
+	var results int
+	var storeresults []int
+	store := storepresentDigits(number)
+	for i := 1; i <= 6; i++ {
+		results = number * i
+		check := checkNumbersExist(results, store)
+		if check {
+			storeresults = append(storeresults, results)
+		}
+	}
+
+	if len(storeresults) == len(store) {
+		b = true
+	} else if len(storeresults) < len(store) {
+		b = false
+	}
+
+	return b
+}
+
 func countDigits(number int) int {
 	if number < 10 {
 		return 1
@@ -24,6 +46,20 @@ func storepresentDigits(number int) []int {
 
 func checkNumbersExist(number int, store []int) bool {
 	var b bool
+	results := make([]int, 0)
+	digits := storepresentDigits(number)
+	for i := 1; i <= len(digits); i++ {
+		for j := 1; j <= len(store); j++ {
+			if store[j-1] == digits[i-1] {
+				results = append(results, store[j-1])
+			}
+		}
+	}
+	if len(results) == len(store) {
+		b = true
+	} else if results == nil {
+		b = false
+	}
 
 	return b
 }

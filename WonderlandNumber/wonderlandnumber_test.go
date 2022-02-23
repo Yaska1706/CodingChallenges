@@ -106,11 +106,61 @@ func Test_checkNumbersExist(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "Numbers don't exist",
+			args: args{
+				number: 288211,
+				store:  []int{6, 7, 9, 5, 3, 4},
+			},
+			want: false,
+		},
+		{
+			name: "When not all Numbers exist",
+			args: args{
+				number: 672813,
+				store:  []int{6, 7, 9, 5, 3, 4},
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := checkNumbersExist(tt.args.number, tt.args.store); got != tt.want {
 				t.Errorf("checkNumbersExist() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_wonderlandnumber(t *testing.T) {
+	type args struct {
+		number int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "non-cyclic number",
+			args: args{
+				number: 234567,
+			},
+			want: false,
+		},
+		{
+			name: "cyclic number",
+			args: args{
+				number: 142857,
+			},
+			want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := wonderlandnumber(tt.args.number); got != tt.want {
+				t.Errorf("wonderlandnumber() = %v, want %v", got, tt.want)
 			}
 		})
 	}

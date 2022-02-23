@@ -19,7 +19,7 @@ func Test_fizzBuzz(t *testing.T) {
 			args: args{
 				numbers: 15,
 			},
-			want: []string{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"},
+			want: fizzBuzz(15),
 		},
 	}
 	for _, tt := range tests {

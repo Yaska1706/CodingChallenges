@@ -1,11 +1,16 @@
 package WonderlandNumber
 
+const (
+	MIN_SIZE_NUMBER = 100000
+	MAX_SIZE_NUMBER = 1000000
+)
+
 func generatewonderlandnumber(size int) int {
 	var result int
-	if size < 100000 && size >= 1000000 {
+	if size < MIN_SIZE_NUMBER && size >= MAX_SIZE_NUMBER {
 		return 0
 	}
-	for i := 100000; i <= size; i++ {
+	for i := MIN_SIZE_NUMBER; i <= size; i++ {
 		check := wonderlandnumber(i)
 		if check {
 			result = i

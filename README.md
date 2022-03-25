@@ -9,7 +9,7 @@ This repository is a collection of different solutions to coding challenges and 
 - [FizzBuzz Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/FizzBuzz)
 - [FizzBuzzPlus Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/FizzBuzzPlus)
 - [Wonderland Number Problem](https://github.com/Yaska1706/CodingChallenges/tree/main/WonderlandNumber)
-- [Two Sum](https://github.com/Yaska1706/CodingChallenges/tree/main/twosums)
+- [Two Sum](https://github.com/Yaska1706/CodingChallenges/tree/main/two-sums)
 <br>
 
 ## AUTHORS

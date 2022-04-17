@@ -5,7 +5,7 @@ const (
 	MAX_SIZE_NUMBER = 1000000
 )
 
-func generatewonderlandnumber(size int) int {
+func generateWonderlandNumber(size int) int {
 	var result int
 	if size < MIN_SIZE_NUMBER && size >= MAX_SIZE_NUMBER {
 		return 0
@@ -19,7 +19,7 @@ func generatewonderlandnumber(size int) int {
 	return result
 }
 
-func wonderlandnumber(number int) bool {
+func wonderlandNumber(number int) bool {
 	var b bool
 	var results int
 	var storeresults []int
@@ -49,7 +49,7 @@ func countDigits(number int) int {
 	}
 }
 
-func storepresentDigits(number int) []int {
+func storePresentDigits(number int) []int {
 	n := countDigits(number)
 	if n < 6 || n > 6 {
 		return []int{}

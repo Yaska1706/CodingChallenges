@@ -80,7 +80,7 @@ func Test_storepresentDigits(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := storepresentDigits(tt.args.number); !reflect.DeepEqual(got, tt.want) {
+			if got := storePresentDigits(tt.args.number); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("storepresentDigits() = %v, want %v", got, tt.want)
 			}
 		})
@@ -159,7 +159,7 @@ func Test_wonderlandnumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := wonderlandnumber(tt.args.number); got != tt.want {
+			if got := wonderlandNumber(tt.args.number); got != tt.want {
 				t.Errorf("wonderlandnumber() = %v, want %v", got, tt.want)
 			}
 		})
@@ -193,7 +193,7 @@ func Test_generatewonderlandnumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := generatewonderlandnumber(tt.args.size); got != tt.want {
+			if got := generateWonderlandNumber(tt.args.size); got != tt.want {
 				t.Errorf("generatewonderlandnumber() = %v, want %v", got, tt.want)
 			}
 		})

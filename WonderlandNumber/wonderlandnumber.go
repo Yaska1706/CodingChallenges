@@ -11,8 +11,7 @@ func generateWonderlandNumber(size int) int {
 		return 0
 	}
 	for i := MIN_SIZE_NUMBER; i <= size; i++ {
-		check := wonderlandNumber(i)
-		if check {
+		if wonderlandNumber(i) {
 			result = i
 		}
 	}
@@ -20,22 +19,24 @@ func generateWonderlandNumber(size int) int {
 }
 
 func wonderlandNumber(number int) bool {
-	var b bool
-	var results int
-	var storeresults []int
+	var (
+		b            bool
+		results      int
+		storeresults []int
+	)
+
 	store := storePresentDigits(number)
 	for i := 1; i <= 6; i++ {
 		results = number * i
-		check := checkNumbersExist(results, store)
-		if check {
+		if checkNumbersExist(results, store) {
 			storeresults = append(storeresults, results)
 		}
 	}
 
 	if len(storeresults) == len(store) {
-		b = true
+		return true
 	} else if len(storeresults) < len(store) {
-		b = false
+		return false
 	}
 
 	return b
@@ -51,7 +52,7 @@ func countDigits(number int) int {
 
 func storePresentDigits(number int) []int {
 	n := countDigits(number)
-	if n < 6 || n > 6 {
+	if n != 6 {
 		return []int{}
 	}
 	store := make([]int, 6)
@@ -75,9 +76,9 @@ func checkNumbersExist(number int, store []int) bool {
 		}
 	}
 	if len(results) == len(store) {
-		b = true
+		return true
 	} else if results == nil {
-		b = false
+		return false
 	}
 
 	return b
